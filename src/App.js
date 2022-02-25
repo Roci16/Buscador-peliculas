@@ -4,7 +4,7 @@ import NavBar from './componentes/NavBar'
 import Main from './componentes/Main'
 import Estrenos from './componentes/Estrenos'
 import Populares from './componentes/Populares'
-
+import Buscador from './componentes/Buscador'
 
 const App = () =>{
   return (
@@ -12,11 +12,11 @@ const App = () =>{
        <BrowserRouter>
               <NavBar/>
               <Routes>
-            {/* Ruteo de app-movie-jhonhks.herokuapp.com */}
-              <Route path="/" element={<Main/>}/>
-              <Route path="/estrenos" element={<Estrenos/>}/>
-              <Route path="/populares" element={<Populares/>}/>
-              <Route path="/buscar" element={<Buscador/>}/>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/estrenos" element={<Estrenos/>}/>
+                <Route path="/populares" element={<Populares/>}/>
+                <Route path="/buscar" element={<Buscador/>}/>
+                {/* Ruteo de app-movie-jhonhks.herokuapp.com */}
                 {/* <Route path="/" element={<Home/>}>Aca va el home</Route>
                 <Route path="/nuevas-peliculas" element={<NuevasPeliculas/>}>despues del home si se hace
                 click en nuevas peliculas</Route>
@@ -28,10 +28,9 @@ const App = () =>{
               {/* ESTA PAG NO TIENE PAGINADO EN BUSQUEDA Y EL PAGINADO DE POPULARES Y NUEVAS PELIS NO ESTA RUTEADO */}
               </Routes>
 
-        {/* populares y estrenos pueden ser una variable que diga que en ek onclick que tiene que rellenarse */}
+        {/* populares y estrenos pueden ser una variable que tiene que rellenarse dependiendo que elijan*/}
         {/* en el map va el Link para hacerle click */}
-        {/* links en los botones del nav */}
-        {/* `podian ser lista ul con li en el nav */}
+        {/* links en los li del nav */}
         </BrowserRouter>
     </div>
   );
