@@ -2,6 +2,8 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import NavBar from './componentes/NavBar'
 import Main from './componentes/Main'
+import Estrenos from './componentes/Estrenos'
+
 
 const App = () =>{
   return (
