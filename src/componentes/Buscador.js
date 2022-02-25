@@ -1,6 +1,13 @@
 const Buscador = ()=>{
     return(
-        <h2>Buscador</h2>
+        <section>
+             <h2>Buscador</h2>
+             <form>
+                <input type="text" placeholder="Buscador" type="text"/> 
+            </form>
+            <input type="submit" value="Buscar"/>
+        </section>
+       
     )
 }
 export default Buscador;
