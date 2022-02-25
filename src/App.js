@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom"
 import NavBar from './componentes/NavBar'
 import Main from './componentes/Main'
 import Estrenos from './componentes/Estrenos'
+import Populares from './componentes/Populares'
 
 
 const App = () =>{
