@@ -25,13 +25,6 @@ const NavBar = ()=>{
                     </Link>
                 </li>
             </ul>
-             {/* {/* <AiFillHome className="home"/>
-             <button className="botones-nav">Populares</button>
-             <button className="botones-nav">Estrenos</button> 
-             <form>
-                <input type="text" placeholder="Buscador"   type="text"/> 
-            </form>
-            <input type="submit" value="Buscar"/> */}
         </nav>
        
     )
