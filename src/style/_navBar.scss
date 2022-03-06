@@ -1,0 +1,27 @@
+@import "_basicos";
+
+nav {
+  background-color: $color-secundario;
+  padding: 10px;
+  ul {
+    list-style: $none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    .home {
+      color: $font-color-principal;
+      font-size: 30px;
+    }
+    li {
+      margin: 8px;
+      a {
+        font-family: "Roboto";
+        font-size: 20px;
+        border-radius: 15px;
+        color: $font-color-principal;
+        text-decoration: $none;
+      }
+    }
+  }
+}
