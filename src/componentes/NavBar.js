@@ -1,5 +1,7 @@
 import {AiFillHome} from "react-icons/ai";
 import {Link} from "react-router-dom"
+import '../style/_navBar.scss'
+
 const NavBar = ()=>{
     return(
         <nav>

@@ -22,7 +22,7 @@ const Buscador = ()=>{
 
     return(
         <section>
-            <h2>Buscador</h2>
+            <h2>Buscador {searchParams}</h2>
              <form onSubmit={handleSubmit} >   
                 <input onChange={handleChange} type="text" placeholder="Buscador" value={valor} /> 
                 <input type="submit" value="Buscar"/>
