@@ -5,6 +5,7 @@ import Main from "./componentes/Main";
 import Estrenos from "./componentes/Estrenos";
 import Populares from "./componentes/Populares";
 import Buscador from "./componentes/Buscador";
+import DetallePelicula from "./componentes/DetallePelicula";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/estrenos" element={<Estrenos />} />
           <Route path="/populares" element={<Populares />} />
           <Route path="/buscar" element={<Buscador />} />
+          <Route path="/movie/:idPelicula" element={<DetallePelicula />} />
           {/* Ruteo de app-movie-jhonhks.herokuapp.com */}
           {/* <Route path="/" element={<Home/>}>Aca va el home</Route>
                 <Route path="/nuevas-peliculas" element={<NuevasPeliculas/>}>despues del home si se hace
