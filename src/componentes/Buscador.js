@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Item from "./Item";
 
@@ -44,11 +44,12 @@ const Buscador = () => {
         <input type="submit" value="Buscar" />
       </form>
       {peliculas.map((pelicula) => (
-        <Item
-          key={pelicula.id}
-          title={pelicula.title}
-          image={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`}
-        />
+        <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
+          <Item
+            title={pelicula.title}
+            image={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`}
+          />
+        </Link>
       ))}
     </section>
   );
