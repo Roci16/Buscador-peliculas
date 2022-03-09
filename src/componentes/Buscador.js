@@ -1,6 +1,7 @@
 import { useSearchParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Item from "./Item";
+import "../style/_buscador.scss";
 
 const Buscador = () => {
   const [valorInput, setValorInput] = useState("");
@@ -32,8 +33,8 @@ const Buscador = () => {
   };
 
   return (
-    <section>
-      <h2>Buscador</h2>
+    <section className="seccion-busqueda">
+      <h2 className="titulo-buscador">Buscador</h2>
       <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
