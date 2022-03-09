@@ -34,7 +34,9 @@ const Buscador = () => {
 
   return (
     <section className="seccion-busqueda">
-      <h2 className="titulo-buscador">Buscador</h2>
+      <h2 className="titulo-buscador">
+        Estas buscando: {searchParams.get("query")}
+      </h2>
       <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
