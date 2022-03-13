@@ -3,4 +3,7 @@
 .conteiner {
   background-color: $color-principal;
   color: $font-color-principal;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
