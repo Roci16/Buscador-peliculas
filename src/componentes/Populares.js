@@ -1,4 +1,6 @@
 import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
+import Item from "./Item";
 
 const Populares = () => {
   const peliculas = useFetch("popular");
@@ -6,15 +8,13 @@ const Populares = () => {
   return (
     <div>
       <h2>Populares</h2>
-
       {peliculas.map((pelicula) => (
-        <div key={pelicula.id}>
-          <h3>{pelicula.title} </h3>
-          <img
-            src={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`}
-            alt={pelicula.title}
+        <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
+          <Item
+            title={pelicula.title}
+            image={`https://image.tmdb.org/t/p/w200/${pelicula.poster_path}`}
           />
-        </div>
+        </Link>
       ))}
     </div>
   );
