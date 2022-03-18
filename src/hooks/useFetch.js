@@ -9,7 +9,7 @@ const useFetch = (categorias) => {
     )
       .then((res) => res.json())
       .then((data) => setPeliculas(data.results));
-  }, []);
+  }, [categorias]);
 
   return peliculas;
 };
