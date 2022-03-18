@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = ({ categorias }) => {
+const useFetch = (categorias) => {
   const [peliculas, setPeliculas] = useState([]);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const useFetch = ({ categorias }) => {
     )
       .then((res) => res.json())
       .then((data) => setPeliculas(data.results));
-  }, []);
+  }, [categorias]);
 
   return peliculas;
 };
