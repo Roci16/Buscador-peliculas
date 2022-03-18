@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (categorias) => {
+const useFetch = ({ categorias }) => {
   const [peliculas, setPeliculas] = useState([]);
 
   useEffect(() => {
