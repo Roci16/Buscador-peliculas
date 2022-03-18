@@ -34,18 +34,20 @@ const Buscador = () => {
 
   return (
     <section className="seccion-busqueda">
-      <h2 className="titulo-buscador">
-        Estas buscando: {searchParams.get("query")}
-      </h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="text"
-          placeholder="Buscador"
-          value={valorInput}
-        />
-        <input type="submit" value="Buscar" />
-      </form>
+      <div>
+        <h2 className="titulo-buscador">
+          Estas buscando: {searchParams.get("query")}
+        </h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            onChange={handleChange}
+            type="text"
+            placeholder="Buscador"
+            value={valorInput}
+          />
+          <input type="submit" value="Buscar" />
+        </form>{" "}
+      </div>
       {peliculas.map((pelicula) => (
         <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
           <Item
