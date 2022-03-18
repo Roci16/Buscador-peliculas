@@ -1,0 +1,25 @@
+@import "_basicos";
+
+footer {
+  background-color: $color-secundario;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  ul {
+    display: flex;
+    padding: 0;
+    a {
+      text-decoration: $none;
+      background: #686c7093;
+      margin: 10px;
+      border-radius: 10px;
+      li {
+        color: $font-color-principal;
+        list-style: $none;
+        margin: 5px;
+      }
+    }
+  }
+}
