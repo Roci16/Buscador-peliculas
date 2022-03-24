@@ -28,6 +28,7 @@ const Carousel = () => {
             <div className="carousel-item">
               <img
                 src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
+                alt={pelicula.title}
               />
             </div>
             <div className="titulo">
