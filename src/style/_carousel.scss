@@ -6,3 +6,13 @@
     height: 800px;
   }
 }
+.titulo {
+  display: flex;
+  position: absolute;
+  top: 88%;
+  width: 100%;
+  color: black;
+  background: #c7c4c4c4;
+  align-items: center;
+  justify-content: center;
+}

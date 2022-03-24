@@ -11,7 +11,6 @@ const Carousel = () => {
   const peliculas = useFetch("now_playing");
 
   return (
-    // <p>l</p>
     <div className="carousel">
       <Slider
         dots={true}
@@ -19,15 +18,10 @@ const Carousel = () => {
         infinite={true}
         slidesToShow={1}
         slidesToScroll={1}
-        autoplay={true}
-        speed={2500}
+        autoplay={false}
+        speed={2000}
         autoplaySpeed={3000}
         fade={true}
-        // dots={true}
-        // arrows={true}
-        // slidesToShow={1}
-        // autoplay={false}
-        // autoplaySpeed={1000}
       >
         {peliculas.map((pelicula) => (
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
@@ -35,6 +29,9 @@ const Carousel = () => {
               <img
                 src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
               />
+            </div>
+            <div className="titulo">
+              <h3>{pelicula.title}</h3>
             </div>
           </Link>
         ))}
