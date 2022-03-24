@@ -46,7 +46,7 @@ const Buscador = () => {
             value={valorInput}
           />
           <input type="submit" value="Buscar" />
-        </form>{" "}
+        </form>
       </div>
       <article className="resultado-busqueda">
         {peliculas.map((pelicula) => (
