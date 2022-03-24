@@ -1,18 +1,27 @@
 .seccion-busqueda {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  flex-direction: column;
   max-width: 1300px;
-  .titulo-buscador {
-    width: 100%;
-    text-align: center;
+  div {
+    .titulo-buscador {
+      width: 100%;
+      text-align: center;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      height: 5vh;
+    }
+    a {
+      text-decoration: none;
+    }
   }
-  form {
-    width: 100%;
+  .resultado-busqueda {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-  }
-  a {
-    text-decoration: none;
   }
 }
