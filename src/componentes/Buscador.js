@@ -1,6 +1,5 @@
 import { useSearchParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Item from "./Item";
 import "../style/_buscador.scss";
 
 const Buscador = () => {
