@@ -2,7 +2,6 @@ import "../style/_carousel.scss";
 
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
-import Item from "./Item";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
