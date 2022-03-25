@@ -18,13 +18,6 @@ const Tarjeta = ({ url, titulo }) => {
       <article className="tarjetas-home">
         {peliculas.map((pelicula) => (
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
-            {/* <div>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
-                alt={pelicula.title}
-              />
-            </div>
-            <h3>{pelicula.title}</h3> */}
             {/* <Item
               title={pelicula.title}
               image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
