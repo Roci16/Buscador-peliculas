@@ -1,17 +1,12 @@
 import useFetch from "../hooks/useFetch";
-// const peliculas = useFetch("upcoming");
 
 import { Link } from "react-router-dom";
-import Item from "./Item";
+// import Item from "./Item";
 
 import "../style/_tarjeta.scss";
 
 const Tarjeta = ({ url, titulo }) => {
-  console.log(url);
-
   const peliculas = useFetch(url);
-  console.log(peliculas);
-  console.log(useFetch(url));
   return (
     <section className="">
       <h2>{titulo}</h2>
