@@ -12,8 +12,8 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <Slider
-        dots={true}
-        arrows={false}
+        dots={false}
+        arrows={true}
         infinite={true}
         slidesToShow={1}
         slidesToScroll={1}
