@@ -13,6 +13,8 @@ const Estrenos = () => {
           <Item
             title={pelicula.title}
             image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
+            styleContainer="item-vista-general"
+            styleTitle="titulo-pelicula"
           />
         </Link>
       ))}

@@ -1,5 +1,5 @@
 import "../style/_carousel.scss";
-
+import Item from "./Item";
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -17,22 +17,19 @@ const Carousel = () => {
         infinite={true}
         slidesToShow={1}
         slidesToScroll={1}
-        autoplay={false}
+        autoplay={true}
         speed={1000}
         autoplaySpeed={3000}
         fade={true}
       >
         {peliculas.map((pelicula) => (
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
-            <div className="carousel-item">
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
-                alt={pelicula.title}
-              />
-            </div>
-            <div className="titulo">
-              <h3>{pelicula.title}</h3>
-            </div>
+            <Item
+              title={pelicula.title}
+              image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
+              styleContainer="carousel-item"
+              styleTitle="titulo"
+            />
           </Link>
         ))}
       </Slider>
