@@ -2,6 +2,10 @@
 .seccion-home {
   margin: 10px;
   box-shadow: 7px 0 29px 13px #00000086;
+  border: 5px solid $color-secundario;
+  height: 600px;
+  width: 40vw;
+  overflow: scroll;
   h2 {
     background-color: $color-secundario;
     margin: 0;
@@ -10,31 +14,25 @@
     align-items: center;
     justify-content: center;
   }
-  .tarjetas-home {
-    border: 5px solid $color-secundario;
-    height: 600px;
-    width: 40vw;
-    overflow: scroll;
-    a {
-      text-decoration: none;
-      .conteiner-tarjeta {
-        background-color: #514d4d33;
-        display: flex;
-        color: $font-color-principal;
-        margin: 10px;
-        .conteiner-img {
-          width: 50px;
-          img {
-            width: 100%;
-          }
+  a {
+    text-decoration: none;
+    .conteiner-tarjeta {
+      background-color: #514d4d33;
+      display: flex;
+      color: $font-color-principal;
+      margin: 10px;
+      .conteiner-img {
+        width: 50px;
+        img {
+          width: 100%;
         }
-        .titulo-tarjeta {
-          text-align: center;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          text-decoration: none;
-        }
+      }
+      .titulo-tarjeta {
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
       }
     }
   }
