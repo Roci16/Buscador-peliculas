@@ -9,7 +9,9 @@ const Tarjeta = ({ url, titulo }) => {
   const peliculas = useFetch(url);
   return (
     <section className="seccion-home">
-      <h2>{titulo}</h2>
+      <Link to={titulo === "Peliculas Populares" ? "/populares" : "/top_rated"}>
+        <h2>{titulo}</h2>
+      </Link>
       <article className="tarjetas-home">
         {peliculas.map((pelicula) => (
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
