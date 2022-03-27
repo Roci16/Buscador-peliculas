@@ -4,6 +4,7 @@ import NavBar from "./componentes/NavBar";
 import Main from "./componentes/Main";
 import Estrenos from "./componentes/Estrenos";
 import Populares from "./componentes/Populares";
+import Top from "./componentes/Top";
 import Buscador from "./componentes/Buscador";
 import DetallePelicula from "./componentes/DetallePelicula";
 import Footer from "./componentes/Footer";
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Main />} />
           <Route path="/estrenos" element={<Estrenos />} />
           <Route path="/populares" element={<Populares />} />
+          <Route path="/top_rated" element={<Top />} />
           <Route path="/buscar" element={<Buscador />} />
           <Route path="/movie/:idPelicula" element={<DetallePelicula />} />
         </Routes>
