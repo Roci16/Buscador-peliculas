@@ -16,7 +16,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .conteiner-img img {
-    width: 100%;
+  .conteiner-img {
+    img {
+      width: 100%;
+    }
   }
 }

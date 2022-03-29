@@ -28,9 +28,12 @@
         color: $font-color-principal;
         margin: 10px;
         .conteiner-img {
-          width: 50px;
+          // width: 100%;
+          height: 10vh;
+          min-width: 50px;
           img {
             width: 100%;
+            height: 100%;
           }
         }
         .titulo-tarjeta {
