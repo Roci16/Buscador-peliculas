@@ -14,18 +14,17 @@
       justify-content: center;
       height: 5vh;
     }
-    a {
-      text-decoration: none;
-    }
   }
   .resultado-busqueda {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
-    .item-vista-general .conteiner-img img {
-      height: 400px;
+    a {
+      text-decoration: none;
+      .item-vista-general .conteiner-img img {
+        height: 400px;
+      }
     }
   }
 }
