@@ -4,7 +4,7 @@ import imagen from "../img/no-encontrado.svg";
 const NoEncontrado = () => {
   return (
     <div className="imagen-no-encontrada">
-      <img src={imagen} />
+      <img src={imagen} alt="Imagen no encontrada" />
     </div>
   );
 };
