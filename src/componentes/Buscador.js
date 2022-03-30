@@ -14,7 +14,7 @@ const Buscador = () => {
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=9b8ef974b251064418c46a5cc4a9bc01&language=es-ES&query=${searchParams.get(
         "query"
-      )}&page=1&include_adult=false`
+      )}`
     )
       .then((res) => res.json())
       .then((data) => {
