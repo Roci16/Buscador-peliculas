@@ -7,6 +7,7 @@ import Populares from "./componentes/Populares";
 import Top from "./componentes/Top";
 import Buscador from "./componentes/Buscador";
 import DetallePelicula from "./componentes/DetallePelicula";
+import NoEncontrado from "./componentes/NoEncontrado";
 import Footer from "./componentes/Footer";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/top_rated" element={<Top />} />
           <Route path="/buscar" element={<Buscador />} />
           <Route path="/movie/:idPelicula" element={<DetallePelicula />} />
+          <Route path="*" element={<NoEncontrado />} />
         </Routes>
         <Footer />
       </BrowserRouter>
