@@ -1,13 +1,16 @@
 import { useSearchParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Item from "./Item";
+import NoEncontrado from "./NoEncontrado";
 import "../style/_buscador.scss";
 
 const Buscador = () => {
+  const [resultado, setResultado] = useState(true);
+  const [sinResultado, setSinResultado] = useState(false);
   const [valorInput, setValorInput] = useState("");
   const [peliculas, setPeliculas] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams({
-    query: "undefined",
+    query: "algo",
   });
 
   useEffect(() => {
@@ -18,7 +21,16 @@ const Buscador = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setPeliculas(data.results);
+        if (!data.results.length) {
+          console.log(!data.results, "sin resultado :c");
+          setResultado(false);
+          setSinResultado(true);
+        } else {
+          console.log(!data.results, "tengo resultado");
+          setResultado(true);
+          setSinResultado(false);
+          setPeliculas(data.results);
+        }
       });
   }, [searchParams]);
 
@@ -28,7 +40,6 @@ const Buscador = () => {
     setSearchParams({
       query: valorInput,
     });
-    console.log(valorInput);
     e.preventDefault();
   };
 
@@ -48,18 +59,21 @@ const Buscador = () => {
           <input type="submit" value="Buscar" />
         </form>
       </div>
-      <article className="resultado-busqueda">
-        {peliculas.map((pelicula) => (
-          <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
-            <Item
-              title={pelicula.title}
-              image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
-              styleContainer="item-vista-general"
-              styleTitle="titulo-pelicula"
-            />
-          </Link>
-        ))}{" "}
-      </article>
+      {resultado && (
+        <article className="resultado-busqueda">
+          {peliculas.map((pelicula) => (
+            <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
+              <Item
+                title={pelicula.title}
+                image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
+                styleContainer="item-vista-general"
+                styleTitle="titulo-pelicula"
+              />
+            </Link>
+          ))}{" "}
+        </article>
+      )}
+      {sinResultado && <NoEncontrado />}
     </section>
   );
 };

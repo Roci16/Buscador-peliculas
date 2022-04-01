@@ -1,5 +1,5 @@
 import "../style/_error404.scss";
-import imagen from "../img/no-encontrado.svg";
+import imagen from "../img/sin-resultado.png";
 
 const NoEncontrado = () => {
   return (
