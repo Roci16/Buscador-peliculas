@@ -22,8 +22,11 @@
     justify-content: center;
     a {
       text-decoration: none;
-      .item-vista-general .conteiner-img img {
+      .item-vista-general .conteiner-img {
         height: 400px;
+        img {
+          height: 400px;
+        }
       }
     }
   }
