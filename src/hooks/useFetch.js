@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
+import { UrlBase, apiKey, Lenguaje } from "../auxiliares/VariablesGlobales";
 
 const useFetch = (categorias) => {
   const [peliculas, setPeliculas] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${categorias}?api_key=9b8ef974b251064418c46a5cc4a9bc01&language=es-ES&page=1`
-    )
+    fetch(`${UrlBase}${categorias}?${apiKey}${Lenguaje}&page=1`)
       .then((res) => res.json())
       .then((data) => setPeliculas(data.results));
   }, [categorias]);

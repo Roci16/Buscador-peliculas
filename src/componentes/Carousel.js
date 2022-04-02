@@ -1,6 +1,7 @@
 import "../style/_carousel.scss";
 import Item from "./Item";
 import useFetch from "../hooks/useFetch";
+import { UrlImagen } from "../auxiliares/VariablesGlobales";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -26,7 +27,7 @@ const Carousel = () => {
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
             <Item
               title={pelicula.title}
-              image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
+              image={`${UrlImagen}${pelicula.poster_path}`}
               styleContainer="carousel-item"
               styleTitle="titulo"
             />
