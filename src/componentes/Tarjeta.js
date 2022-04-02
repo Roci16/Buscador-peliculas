@@ -1,5 +1,5 @@
 import useFetch from "../hooks/useFetch";
-
+import { UrlImagen } from "../auxiliares/VariablesGlobales";
 import { Link } from "react-router-dom";
 import Item from "./Item";
 
@@ -17,7 +17,7 @@ const Tarjeta = ({ url, titulo }) => {
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
             <Item
               title={pelicula.title}
-              image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
+              image={`${UrlImagen}${pelicula.poster_path}`}
               styleContainer="conteiner-tarjeta"
               styleTitle="titulo-tarjeta"
             />

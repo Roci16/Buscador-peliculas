@@ -1,5 +1,6 @@
 import { useSearchParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { UrlBusqueda, UrlImagen } from "../auxiliares/VariablesGlobales";
 import Item from "./Item";
 import NoEncontrado from "./NoEncontrado";
 import "../style/_buscador.scss";
@@ -14,11 +15,7 @@ const Buscador = () => {
   });
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=9b8ef974b251064418c46a5cc4a9bc01&language=es-ES&query=${searchParams.get(
-        "query"
-      )}`
-    )
+    fetch(`${UrlBusqueda}${searchParams.get("query")}`)
       .then((res) => res.json())
       .then((data) => {
         if (!data.results.length) {
@@ -65,7 +62,7 @@ const Buscador = () => {
             <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
               <Item
                 title={pelicula.title}
-                image={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`}
+                image={`${UrlImagen}${pelicula.poster_path}`}
                 styleContainer="item-vista-general"
                 styleTitle="titulo-pelicula"
               />
