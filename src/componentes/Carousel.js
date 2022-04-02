@@ -21,7 +21,6 @@ const Carousel = () => {
         autoplay={true}
         speed={1000}
         autoplaySpeed={3000}
-        fade={true}
       >
         {peliculas.map((pelicula) => (
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
