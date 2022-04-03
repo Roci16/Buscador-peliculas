@@ -17,7 +17,10 @@ const DetallePelicula = () => {
   useEffect(() => {
     fetch(`${UrlBase}${params.idPelicula}?${apiKey}${Lenguaje}`)
       .then((res) => res.json())
-      .then((data) => setPelicula(data));
+      .then((data) => {
+        setPelicula(data);
+        console.log(data);
+      });
   }, [params.idPelicula]);
 
   return (
@@ -31,8 +34,7 @@ const DetallePelicula = () => {
       }}
       className="fondo-detalle"
     >
-      <article>
-        <h2> {pelicula.title}</h2>
+      <article className="box-detalles">
         <div className="container-poster-detalle">
           <img
             src={
@@ -44,6 +46,11 @@ const DetallePelicula = () => {
             alt={pelicula.title}
           />
         </div>
+        <article className="informacion">
+          <h2> {pelicula.title}</h2>
+          <span>Lanzamiento: {pelicula.release_date}</span>
+          <p>{pelicula.overview}</p>
+        </article>
       </article>
     </section>
   );
