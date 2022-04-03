@@ -18,12 +18,12 @@
         width: 100%;
         box-shadow: 0 0 15px 11px #3b3a3a;
       }
-      .informacion .reparto {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-      }
+    }
+    .informacion-detalle .reparto-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 }
