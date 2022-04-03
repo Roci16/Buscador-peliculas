@@ -1,11 +1,11 @@
 .fondo-detalle {
-  width: 100vw;
+  // width: 100vw;
   // height: 70vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   .box-detalles {
-    height: 50vw;
+    // height: 50vw;
     backdrop-filter: blur(3px);
     background-color: #2422242e;
     backdrop-filter: blur(2px) opacity(4.8);
@@ -17,6 +17,12 @@
       img {
         width: 100%;
         box-shadow: 0 0 15px 11px #3b3a3a;
+      }
+      .informacion .reparto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
       }
     }
   }

@@ -9,10 +9,12 @@ import {
 import "../style/_detalles.scss";
 import img from "../img/default.png";
 import cine from "../img/cine.jpg";
+import Reparto from "./Reparto";
 
 const DetallePelicula = () => {
   const params = useParams();
   const [pelicula, setPelicula] = useState([]);
+  const [reparto, setReparto] = useState([]);
 
   useEffect(() => {
     fetch(`${UrlBase}${params.idPelicula}?${apiKey}${Lenguaje}`)
@@ -20,6 +22,15 @@ const DetallePelicula = () => {
       .then((data) => {
         setPelicula(data);
         console.log(data);
+      });
+  }, [params.idPelicula]);
+
+  useEffect(() => {
+    fetch(`${UrlBase}${params.idPelicula}/credits?${apiKey}${Lenguaje}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReparto(data.cast);
+        console.log(data.cast);
       });
   }, [params.idPelicula]);
 
@@ -49,7 +60,19 @@ const DetallePelicula = () => {
         <article className="informacion">
           <h2> {pelicula.title}</h2>
           <span>Lanzamiento: {pelicula.release_date}</span>
+          <h3>Sinopsis</h3>
           <p>{pelicula.overview}</p>
+          <h4>Reparto</h4>
+          <div className="reparto">
+            {reparto.map((reparto) => (
+              <Reparto
+                key={reparto.id}
+                nombreOriginal={reparto.original_name}
+                nombrePersonaje={reparto.character}
+                image={`${UrlImagen}${reparto.profile_path}`}
+              />
+            ))}{" "}
+          </div>
         </article>
       </article>
     </section>
