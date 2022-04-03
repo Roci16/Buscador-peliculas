@@ -57,13 +57,13 @@ const DetallePelicula = () => {
             alt={pelicula.title}
           />
         </div>
-        <article className="informacion">
+        <article className="informacion-detalle">
           <h2> {pelicula.title}</h2>
           <span>Lanzamiento: {pelicula.release_date}</span>
           <h3>Sinopsis</h3>
           <p>{pelicula.overview}</p>
           <h4>Reparto</h4>
-          <div className="reparto">
+          <div className="reparto-box">
             {reparto.map((reparto) => (
               <Reparto
                 key={reparto.id}
