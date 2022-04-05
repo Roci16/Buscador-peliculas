@@ -1,34 +1,34 @@
 import { useState } from "react";
 
 const usePaginado = () => {
-  const [pagina, setPagina] = useState(1);
+  const [page, setPage] = useState(1);
 
   const handleClickAnterior = () => {
-    setPagina(page - 1);
+    setPage(page - 1);
   };
 
   const handleClickSiguiente = () => {
-    setPagina(page + 1);
+    setPage(page + 1);
   };
 
   const handleClickAnteriorDoble = () => {
-    setPagina(page - 2);
+    setPage(page - 2);
   };
 
   const handleClickSiguienteDoble = () => {
-    setPagina(page + 2);
+    setPage(page + 2);
   };
 
-  const handleClickUltima = (totalPages) => {
-    setPagina(totalPages);
+  const handleClickUltima = (totalPaginas) => {
+    setPage(totalPaginas);
   };
 
   const handleClickPrimera = () => {
-    setPagina(1);
+    setPage(1);
   };
 
   return {
-    pagina: pagina,
+    page: page,
     handleClickAnterior: handleClickAnterior,
     handleClickSiguiente: handleClickSiguiente,
     handleClickSiguienteDoble: handleClickSiguienteDoble,
