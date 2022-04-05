@@ -1,8 +1,8 @@
 .seccion-busqueda {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   max-width: 1300px;
+  min-height: 100vh;
   div {
     .titulo-buscador {
       width: 100%;
@@ -28,6 +28,11 @@
           height: 400px;
         }
       }
+    }
+    .paginas-busqueda {
+      display: flex;
+      width: 100vw;
+      justify-content: center;
     }
   }
 }

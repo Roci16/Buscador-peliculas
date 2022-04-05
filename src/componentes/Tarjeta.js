@@ -6,7 +6,7 @@ import Item from "./Item";
 import "../style/_tarjeta.scss";
 
 const Tarjeta = ({ url, titulo }) => {
-  const peliculas = useFetch(url);
+  const { peliculas } = useFetch(url);
   return (
     <section className="seccion-home">
       <Link to={titulo === "Peliculas Populares" ? "/populares" : "/top_rated"}>

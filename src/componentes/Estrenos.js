@@ -3,9 +3,20 @@ import { Link } from "react-router-dom";
 import Item from "./Item";
 import { UrlImagen } from "../auxiliares/VariablesGlobales";
 import "../style/_secciones.scss";
+import Paginado from "./Paginado";
+import usePaginado from "../hooks/usePaginado";
 
 const Estrenos = () => {
-  const peliculas = useFetch("upcoming");
+  const {
+    page,
+    handleClickPrimera,
+    handleClickAnteriorDoble,
+    handleClickUltima,
+    handleClickSiguienteDoble,
+    handleClickAnterior,
+    handleClickSiguiente,
+  } = usePaginado();
+  const { peliculas, totalPaginas } = useFetch("upcoming", page);
 
   return (
     <section className="seccion-container">
@@ -22,6 +33,16 @@ const Estrenos = () => {
           </Link>
         ))}
       </section>
+      <Paginado
+        handleClickAnterior={handleClickAnterior}
+        handleClickSiguiente={handleClickSiguiente}
+        handleClickSiguienteDoble={handleClickSiguienteDoble}
+        handleClickAnteriorDoble={handleClickAnteriorDoble}
+        handleClickPrimera={handleClickPrimera}
+        handleClickUltima={handleClickUltima}
+        page={page}
+        totalPaginas={totalPaginas}
+      />
     </section>
   );
 };

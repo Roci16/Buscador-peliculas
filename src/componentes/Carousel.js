@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Carousel = () => {
-  const peliculas = useFetch("now_playing");
+  const { peliculas } = useFetch("now_playing");
 
   return (
     <div className="carousel">
