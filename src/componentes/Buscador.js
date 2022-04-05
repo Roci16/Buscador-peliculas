@@ -40,7 +40,7 @@ const Buscador = () => {
           setTotalPaginas(data.total_pages);
         }
       });
-  }, [{ searchParams, page }]);
+  }, [searchParams, page]);
 
   const handleChange = (e) => setValorInput(e.target.value);
 
