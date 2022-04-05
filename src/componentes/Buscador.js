@@ -4,8 +4,20 @@ import { UrlBusqueda, UrlImagen } from "../auxiliares/VariablesGlobales";
 import Item from "./Item";
 import NoEncontrado from "./NoEncontrado";
 import "../style/_buscador.scss";
+import Paginado from "./Paginado";
+import usePaginado from "../hooks/usePaginado";
 
 const Buscador = () => {
+  const {
+    page,
+    handleClickPrimera,
+    handleClickAnteriorDoble,
+    handleClickUltima,
+    handleClickSiguienteDoble,
+    handleClickAnterior,
+    handleClickSiguiente,
+  } = usePaginado();
+  const [totalPaginas, setTotalPaginas] = useState(1);
   const [resultado, setResultado] = useState(true);
   const [sinResultado, setSinResultado] = useState(false);
   const [valorInput, setValorInput] = useState("");
@@ -15,21 +27,20 @@ const Buscador = () => {
   });
 
   useEffect(() => {
-    fetch(`${UrlBusqueda}${searchParams.get("query")}`)
+    fetch(`${UrlBusqueda}${searchParams.get("query")}&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         if (!data.results.length) {
-          console.log(!data.results, "sin resultado :c");
           setResultado(false);
           setSinResultado(true);
         } else {
-          console.log(!data.results, "tengo resultado");
           setResultado(true);
           setSinResultado(false);
           setPeliculas(data.results);
+          setTotalPaginas(data.total_pages);
         }
       });
-  }, [searchParams]);
+  }, [{ searchParams, page }]);
 
   const handleChange = (e) => setValorInput(e.target.value);
 
@@ -69,6 +80,18 @@ const Buscador = () => {
                 />
               </Link>
             ))}
+            <div className="paginas-busqueda">
+              <Paginado
+                handleClickAnterior={handleClickAnterior}
+                handleClickSiguiente={handleClickSiguiente}
+                handleClickSiguienteDoble={handleClickSiguienteDoble}
+                handleClickAnteriorDoble={handleClickAnteriorDoble}
+                handleClickPrimera={handleClickPrimera}
+                handleClickUltima={handleClickUltima}
+                page={page}
+                totalPaginas={totalPaginas}
+              />
+            </div>
           </article>
         )}
         {sinResultado && <NoEncontrado />}

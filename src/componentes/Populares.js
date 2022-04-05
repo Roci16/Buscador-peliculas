@@ -18,21 +18,19 @@ const Populares = () => {
   } = usePaginado();
   const { peliculas, totalPaginas } = useFetch("popular", page);
   return (
-    <>
-      <section className="seccion-container">
-        <h2>Populares</h2>
-        <section className="coleccion-tarjetas">
-          {peliculas.map((pelicula) => (
-            <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
-              <Item
-                title={pelicula.title}
-                image={`${UrlImagen}${pelicula.poster_path}`}
-                styleContainer="item-vista-general"
-                styleTitle="titulo-pelicula"
-              />
-            </Link>
-          ))}
-        </section>
+    <section className="seccion-container">
+      <h2>Populares</h2>
+      <section className="coleccion-tarjetas">
+        {peliculas.map((pelicula) => (
+          <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
+            <Item
+              title={pelicula.title}
+              image={`${UrlImagen}${pelicula.poster_path}`}
+              styleContainer="item-vista-general"
+              styleTitle="titulo-pelicula"
+            />
+          </Link>
+        ))}
       </section>
       <Paginado
         handleClickAnterior={handleClickAnterior}
@@ -44,7 +42,7 @@ const Populares = () => {
         page={page}
         totalPaginas={totalPaginas}
       />
-    </>
+    </section>
   );
 };
 export default Populares;
