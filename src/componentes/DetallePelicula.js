@@ -58,7 +58,7 @@ const DetallePelicula = () => {
           <p>
             {pelicula.overview === "" ? "Sin resultados" : pelicula.overview}
           </p>
-          <p>Genero: {pelicula.genres && pelicula.genres[0].name}</p>
+          <p>Géneros : {pelicula.genres && pelicula.genres[0].name}</p>
         </article>
       </article>
     </section>
