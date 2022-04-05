@@ -48,9 +48,17 @@ const DetallePelicula = () => {
         </div>
         <article className="informacion-detalle">
           <h2> {pelicula.title}</h2>
-          <span>Lanzamiento: {pelicula.release_date}</span>
-          <h3>Sinopsis</h3>
-          <p>{pelicula.overview}</p>
+          <span>
+            Lanzamiento:
+            {pelicula.release_date === ""
+              ? "Sin resultados"
+              : pelicula.release_date}
+          </span>
+          <h3>Sinopsis:</h3>
+          <p>
+            {pelicula.overview === "" ? "Sin resultados" : pelicula.overview}
+          </p>
+          <p>Genero: {pelicula.genres && pelicula.genres[0].name}</p>
         </article>
       </article>
     </section>
