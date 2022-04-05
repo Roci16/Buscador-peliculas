@@ -11,7 +11,7 @@ const Buscador = () => {
   const [valorInput, setValorInput] = useState("");
   const [peliculas, setPeliculas] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams({
-    query: "algo",
+    query: "",
   });
 
   useEffect(() => {
