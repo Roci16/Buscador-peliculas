@@ -1,0 +1,29 @@
+.box-cargando {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .cargando {
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 99px;
+    border-radius: 50%;
+    border-left-color: #fb98d2;
+    animation: spin 1s ease infinite;
+  }
+  span {
+    margin: 10px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
