@@ -1,7 +1,14 @@
 @import "_basicos";
 
 nav {
-  background-color: $color-secundario;
+  position: fixed;
+  background: linear-gradient(
+    180deg,
+    rgb(58, 58, 58) 0%,
+    rgba(58, 58, 58, 0.8183648459383753) 64%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
   width: 100%;
   ul {
     list-style: $none;
@@ -29,8 +36,12 @@ nav {
   }
 }
 @media screen and (max-width: 425px) {
-  nav ul li {
-    margin: 3px;
-    padding: 4px;
+  nav {
+    display: flex;
+    justify-content: center;
+    ul li {
+      margin: 3px;
+      padding: 4px;
+    }
   }
 }
