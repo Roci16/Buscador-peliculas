@@ -7,10 +7,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    .item-vista-general .conteiner-img {
-      height: 400px;
-      img {
-        height: 100%;
+    a {
+      text-decoration: none;
+      .item-vista-general .conteiner-img {
+        height: 400px;
+        img {
+          height: 100%;
+        }
       }
     }
   }
