@@ -1,9 +1,17 @@
 .imagen-no-encontrada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60vw;
-  height: 80vh;
+  height: 85vh;
   margin: 15px;
   img {
     width: 100%;
-    height: 100%;
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 720px) {
+  .imagen-no-encontrada img {
+    height: 35vh;
   }
 }
