@@ -6,7 +6,6 @@ import NoEncontrado from "./NoEncontrado";
 import "../style/_buscador.scss";
 import Paginado from "./Paginado";
 import usePaginado from "../hooks/usePaginado";
-
 import Cargando from "./Cargando";
 
 const Buscador = () => {
@@ -27,7 +26,6 @@ const Buscador = () => {
   const [searchParams, setSearchParams] = useSearchParams({
     query: "",
   });
-
   const [cargando, setCargando] = useState(false);
 
   useEffect(() => {
