@@ -19,9 +19,6 @@
       margin: 0;
     }
     .container-poster-detalle {
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
       width: 25vw;
       img {
         width: 100%;
@@ -38,6 +35,22 @@
       padding: 10px;
       overflow: hidden;
       overflow: scroll;
+    }
+  }
+}
+@media screen and(min-width: 425px) and (max-width: 768px) {
+  .fondo-detalle .box-detalles .container-poster-detalle {
+    width: 40vw;
+    img {
+      height: 60vh;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .fondo-detalle .box-detalles .container-poster-detalle {
+    width: 50vw;
+    img {
+      height: 30vh;
     }
   }
 }
