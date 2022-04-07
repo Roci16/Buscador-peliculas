@@ -7,6 +7,8 @@ import "../style/_buscador.scss";
 import Paginado from "./Paginado";
 import usePaginado from "../hooks/usePaginado";
 
+import Cargando from "./Cargando";
+
 const Buscador = () => {
   const {
     page,
@@ -26,10 +28,14 @@ const Buscador = () => {
     query: "",
   });
 
+  const [cargando, setCargando] = useState(false);
+
   useEffect(() => {
+    setCargando(true);
     fetch(`${UrlBusqueda}${searchParams.get("query")}&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
+        setCargando(false);
         if (!data.results.length) {
           setResultado(false);
           setSinResultado(true);
@@ -53,49 +59,52 @@ const Buscador = () => {
 
   return (
     <>
-      <section className="seccion-busqueda">
-        <div>
-          <h2 className="titulo-buscador">
-            Estas buscando: {searchParams.get("query")}
-          </h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              onChange={handleChange}
-              type="text"
-              placeholder="Buscador"
-              value={valorInput}
-            />
-            <input type="submit" value="Buscar" />
-          </form>
-        </div>
-        {resultado && (
-          <article className="resultado-busqueda">
-            {peliculas.map((pelicula) => (
-              <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
-                <Item
-                  title={pelicula.title}
-                  image={`${UrlImagen}${pelicula.poster_path}`}
-                  styleContainer="item-vista-general"
-                  styleTitle="titulo-pelicula"
-                />
-              </Link>
-            ))}
-            <div className="paginas-busqueda">
-              <Paginado
-                handleClickAnterior={handleClickAnterior}
-                handleClickSiguiente={handleClickSiguiente}
-                handleClickSiguienteDoble={handleClickSiguienteDoble}
-                handleClickAnteriorDoble={handleClickAnteriorDoble}
-                handleClickPrimera={handleClickPrimera}
-                handleClickUltima={handleClickUltima}
-                page={page}
-                totalPaginas={totalPaginas}
+      <Cargando cargando={cargando} />
+      {!cargando && (
+        <section className="seccion-busqueda">
+          <div>
+            <h2 className="titulo-buscador">
+              Estas buscando: {searchParams.get("query")}
+            </h2>
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={handleChange}
+                type="text"
+                placeholder="Buscador"
+                value={valorInput}
               />
-            </div>
-          </article>
-        )}
-        {sinResultado && <NoEncontrado />}
-      </section>
+              <input type="submit" value="Buscar" />
+            </form>
+          </div>
+          {resultado && (
+            <article className="resultado-busqueda">
+              {peliculas.map((pelicula) => (
+                <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
+                  <Item
+                    title={pelicula.title}
+                    image={`${UrlImagen}${pelicula.poster_path}`}
+                    styleContainer="item-vista-general"
+                    styleTitle="titulo-pelicula"
+                  />
+                </Link>
+              ))}
+              <div className="paginas-busqueda">
+                <Paginado
+                  handleClickAnterior={handleClickAnterior}
+                  handleClickSiguiente={handleClickSiguiente}
+                  handleClickSiguienteDoble={handleClickSiguienteDoble}
+                  handleClickAnteriorDoble={handleClickAnteriorDoble}
+                  handleClickPrimera={handleClickPrimera}
+                  handleClickUltima={handleClickUltima}
+                  page={page}
+                  totalPaginas={totalPaginas}
+                />
+              </div>
+            </article>
+          )}
+          {sinResultado && <NoEncontrado />}
+        </section>
+      )}
     </>
   );
 };
