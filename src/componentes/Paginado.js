@@ -19,22 +19,32 @@ const Paginado = ({
 }) => {
   return (
     <section>
-      <button onClick={handleClickPrimera} disabled={page === 1}>
+      <button
+        onClick={handleClickPrimera}
+        disabled={page === 1}
+        aria-label="Primera página"
+      >
         <BsChevronBarLeft />
       </button>
       <button
         onClick={handleClickAnteriorDoble}
         disabled={page === 2 || page === 1}
+        aria-label="Retroceder dos página"
       >
         <BsChevronDoubleLeft />
       </button>
-      <button onClick={handleClickAnterior} disabled={page === 1}>
+      <button
+        onClick={handleClickAnterior}
+        disabled={page === 1}
+        aria-label="Página anterior"
+      >
         <BsChevronLeft />
       </button>
       <span>{page}</span>
       <button
         onClick={handleClickSiguiente}
         disabled={totalPaginas > 500 ? page === 500 : page === totalPaginas}
+        aria-label="Página siguiente"
       >
         <BsChevronRight />
       </button>
@@ -45,6 +55,7 @@ const Paginado = ({
             ? page === 500 || page >= 498
             : page === totalPaginas
         }
+        aria-label="Avanzar dos página"
       >
         <BsChevronDoubleRight />
       </button>
@@ -53,6 +64,7 @@ const Paginado = ({
           handleClickUltima(totalPaginas > 500 ? 500 : totalPaginas)
         }
         disabled={totalPaginas > 500 ? page === 500 : page === totalPaginas}
+        aria-label="Última página"
       >
         <BsChevronBarRight />
       </button>
