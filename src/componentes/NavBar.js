@@ -8,7 +8,7 @@ const NavBar = () => {
       <ul>
         <li className="home">
           <Link to="/">
-            <AiFillHome className="home" />
+            <AiFillHome className="home" aria-label="Página principal" />
           </Link>
         </li>
         <li className="botones-nav">
