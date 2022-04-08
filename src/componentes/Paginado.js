@@ -6,6 +6,7 @@ import {
   BsChevronDoubleRight,
   BsChevronBarRight,
 } from "react-icons/bs";
+import "../style/_paginado.scss";
 
 const Paginado = ({
   page,
@@ -40,7 +41,7 @@ const Paginado = ({
       >
         <BsChevronLeft />
       </button>
-      <span>{page}</span>
+      <span className="span-paginado">{page}</span>
       <button
         onClick={handleClickSiguiente}
         disabled={totalPaginas > 500 ? page === 500 : page === totalPaginas}
