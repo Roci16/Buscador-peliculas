@@ -2,6 +2,12 @@
 .seccion-container {
   @include direction($align: center, $content: none);
   margin-top: 90px;
+  h2 {
+    background: linear-gradient(45deg, #fb98b6, #fd3171, #ff005082);
+    color: white;
+    width: 50%;
+    text-align: center;
+  }
   .coleccion-tarjetas {
     @include direction($direccion: row, $align: center, $content: center);
     a {
