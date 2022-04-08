@@ -1,5 +1,4 @@
 @import "_basicos";
-
 .item-vista-general {
   display: flex;
   justify-content: center;
@@ -18,7 +17,7 @@
   }
   .conteiner-img {
     img {
-      width: 100%;
+      width: $total-porciento;
     }
   }
 }

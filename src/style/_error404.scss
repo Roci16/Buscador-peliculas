@@ -1,3 +1,4 @@
+@import "_basicos";
 .imagen-no-encontrada {
   display: flex;
   align-items: center;
@@ -6,7 +7,7 @@
   height: 75vh;
   margin: 50px 0;
   img {
-    width: 100%;
+    width: $total-porciento;
     height: 70vh;
   }
 }

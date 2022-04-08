@@ -1,16 +1,17 @@
+@import "_basicos";
 .box-cargando {
-  width: 100vw;
-  height: 100vh;
+  width: $total-vw;
+  height: $total-vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   .cargando {
     border: 5px solid rgba(0, 0, 0, 0.1);
-    width: 100px;
-    height: 99px;
-    border-radius: 50%;
-    border-left-color: #fb98d2;
+    width: $max-pixel;
+    height: $max-pixel;
+    border-radius: $medio-porcentaje;
+    border-left-color: $font-color-principal;
     animation: spin 1s ease infinite;
   }
   span {

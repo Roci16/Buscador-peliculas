@@ -1,8 +1,7 @@
 @import "_basicos";
-
 footer {
   background-color: $color-secundario;
-  width: 100%;
+  width: $total-porciento;
   display: flex;
   justify-content: center;
   align-items: center;

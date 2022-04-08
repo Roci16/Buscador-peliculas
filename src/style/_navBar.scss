@@ -1,5 +1,4 @@
 @import "_basicos";
-
 nav {
   position: fixed;
   background: linear-gradient(
@@ -9,7 +8,7 @@ nav {
     rgba(255, 255, 255, 0) 100%
   );
   z-index: 1;
-  width: 100%;
+  width: $total-porciento;
   ul {
     list-style: $none;
     display: flex;
