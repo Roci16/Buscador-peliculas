@@ -15,10 +15,12 @@ nav {
     padding: 0;
 
     .home {
+      transition: 0.7s linear;
       color: $font-color-principal;
       font-size: 30px;
     }
     li {
+      transition: 0.7s linear;
       margin: 8px;
       background: #686c7093;
       border-radius: 15px;
@@ -32,12 +34,29 @@ nav {
     }
   }
 }
+.botones-nav:hover {
+  background: linear-gradient(45deg, #fb98b6, #fd3171, #ff005082);
+  transition: 1s;
+}
+.home:hover {
+  background: linear-gradient(45deg, #fb98b6, #fd3171, #ff005082);
+  transition: 1s;
+  color: white;
+}
+.botones-nav:hover a {
+  color: white;
+  text-shadow: 2px 0 0px black;
+  font-weight: 800 bolder;
+}
 @media screen and (max-width: 425px) {
   nav {
     @include direction($direccion: row);
     ul li {
       margin: 3px;
       padding: 4px;
+      a {
+        font-size: 13px;
+      }
     }
   }
 }
