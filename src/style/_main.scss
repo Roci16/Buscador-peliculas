@@ -2,6 +2,11 @@
 main {
   width: $total-porciento;
   margin-top: 90px;
+  h1 {
+    text-align: center;
+    background: linear-gradient(45deg, #fb98b6, #fd3171, #ff005082);
+    color: white;
+  }
   .box-tarjetas {
     @include direction($direccion: row, $content: space-around);
     margin: 30px;
