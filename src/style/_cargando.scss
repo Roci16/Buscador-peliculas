@@ -2,10 +2,7 @@
 .box-cargando {
   width: $total-vw;
   height: $total-vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include direction($align: center);
   .cargando {
     border: 5px solid rgba(0, 0, 0, 0.1);
     width: $max-pixel;

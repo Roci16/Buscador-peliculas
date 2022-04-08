@@ -7,3 +7,11 @@ $total-vh: 100vh;
 $total-porciento: 100%;
 $max-pixel: 100px;
 $medio-porcentaje: 50%;
+
+@mixin direction($direccion: column, $content: center, $align: none) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $content;
+  flex-wrap: wrap;
+  align-items: $align;
+}

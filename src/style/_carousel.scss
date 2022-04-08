@@ -21,19 +21,17 @@
     .conteiner-img img {
       width: $total-porciento;
     }
-    .titulo {
-      display: flex;
-      position: absolute;
-      bottom: 0;
-      // margin: 0;
-      padding: 5px;
-      width: $total-porciento;
-      color: rgb(255, 255, 255);
-      // box-shadow: inset 0px 0px 70px 50px rgb(20, 20, 20);
-      align-items: flex-end;
-      justify-content: center;
-      font-size: 40px;
-      // height: 100vh;
-    }
+    // .titulo {
+    //   @include direction($align: flex-end, $direccion: row);
+    //   position: absolute;
+    //   bottom: 0;
+    //   // margin: 0;
+    //   padding: 5px;
+    //   width: $total-porciento;
+    //   color: rgb(255, 255, 255);
+    //   // box-shadow: inset 0px 0px 70px 50px rgb(20, 20, 20);
+    //   font-size: 40px;
+    //   // height: 100vh;
+    // }
   }
 }
