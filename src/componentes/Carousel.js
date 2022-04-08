@@ -22,11 +22,13 @@ const Carousel = ({ peliculas }) => {
         {peliculas.map((pelicula) => (
           <Link key={pelicula.id} to={`/movie/${pelicula.id}`}>
             <Item
-              title={pelicula.title}
               image={`${UrlImagen}${pelicula.poster_path}`}
               styleContainer="carousel-item"
-              styleTitle="titulo"
             />
+            <div className="info-carousel">
+              <h3>{pelicula.title}</h3>
+              <p>{pelicula.overview}</p>
+            </div>
           </Link>
         ))}
       </Slider>
