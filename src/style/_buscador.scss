@@ -1,16 +1,17 @@
+@import "_basicos";
 .seccion-busqueda {
   display: flex;
   flex-direction: column;
   max-width: 1300px;
-  min-height: 100vh;
+  min-height: $total-vw;
   margin-top: 90px;
   div {
     .titulo-buscador {
-      width: 100%;
+      width: $total-porciento;
       text-align: center;
     }
     form {
-      width: 100%;
+      width: $total-porciento;
       display: flex;
       justify-content: center;
       height: 5vh;
@@ -32,7 +33,7 @@
     }
     .paginas-busqueda {
       display: flex;
-      width: 100vw;
+      width: $total-vw;
       justify-content: center;
     }
   }
