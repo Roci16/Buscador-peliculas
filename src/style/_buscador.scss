@@ -18,10 +18,18 @@
     @include direction($direccion: row);
     a {
       text-decoration: none;
-      .item-vista-general .conteiner-img {
-        height: 400px;
-        img {
+      .item-vista-general {
+        .conteiner-img {
           height: 400px;
+          img {
+            height: 400px;
+          }
+        }
+        .icono {
+          @include direction($direccion: row, $align: center, $content: center);
+          background-color: rgba(143, 143, 143, 0.438);
+          color: white;
+          padding-bottom: 5px;
         }
       }
     }
