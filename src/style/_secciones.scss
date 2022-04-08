@@ -6,10 +6,18 @@
     @include direction($direccion: row, $align: center, $content: center);
     a {
       text-decoration: none;
-      .item-vista-general .conteiner-img {
-        height: 400px;
-        img {
-          height: $total-porciento;
+      .item-vista-general {
+        .conteiner-img {
+          height: 400px;
+          img {
+            height: $total-porciento;
+          }
+        }
+        .icono {
+          @include direction($direccion: row, $align: center, $content: center);
+          background-color: rgba(143, 143, 143, 0.438);
+          color: white;
+          padding-bottom: 5px;
         }
       }
     }
