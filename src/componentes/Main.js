@@ -11,6 +11,7 @@ const Main = () => {
       <Cargando cargando={cargando} />
       {!cargando && (
         <>
+          <h1>Buscador de peliculas</h1>
           <Carousel peliculas={peliculas} />
           <section className="box-tarjetas ">
             <Tarjeta url="popular" titulo="Peliculas Populares" />
