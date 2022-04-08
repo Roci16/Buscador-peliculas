@@ -45,6 +45,8 @@ nav {
 }
 .botones-nav:hover a {
   color: white;
+  text-shadow: 2px 0 0px black;
+  font-weight: 800 bolder;
 }
 @media screen and (max-width: 425px) {
   nav {
@@ -52,6 +54,9 @@ nav {
     ul li {
       margin: 3px;
       padding: 4px;
+      a {
+        font-size: 13px;
+      }
     }
   }
 }
