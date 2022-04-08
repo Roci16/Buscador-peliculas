@@ -1,11 +1,8 @@
 @import "_basicos";
 footer {
+  @include direction($align: center);
   background-color: $color-secundario;
   width: $total-porciento;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   ul {
     display: flex;
     padding: 0;

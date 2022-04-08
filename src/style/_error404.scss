@@ -1,8 +1,6 @@
 @import "_basicos";
 .imagen-no-encontrada {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include direction($direccion: row, $align: center);
   width: 60vw;
   height: 75vh;
   margin: 50px 0;

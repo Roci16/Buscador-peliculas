@@ -3,9 +3,7 @@ main {
   width: $total-porciento;
   margin-top: 90px;
   .box-tarjetas {
+    @include direction($direccion: row, $content: space-around);
     margin: 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
   }
 }

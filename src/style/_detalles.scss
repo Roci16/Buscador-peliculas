@@ -1,7 +1,6 @@
 @import "_basicos";
 .fondo-detalle {
-  display: flex;
-  justify-content: center;
+  @include direction($direccion: row);
   height: $total-vh;
   width: $total-porciento;
   background-size: cover;
@@ -9,11 +8,9 @@
   background-repeat: no-repeat;
   margin-top: $max-pixel;
   .box-detalles {
+    @include direction($direccion: row, $align: center);
     padding-top: 20px;
     width: $total-porciento;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     backdrop-filter: blur(3px);
     background-color: #2422242e;

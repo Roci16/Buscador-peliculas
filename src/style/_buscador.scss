@@ -1,9 +1,7 @@
 @import "_basicos";
 .seccion-busqueda {
-  display: flex;
-  flex-direction: column;
   max-width: 1300px;
-  min-height: $total-vw;
+  min-height: $total-vh;
   margin-top: 90px;
   div {
     .titulo-buscador {
@@ -11,17 +9,13 @@
       text-align: center;
     }
     form {
+      @include direction($content: center, $direccion: row);
       width: $total-porciento;
-      display: flex;
-      justify-content: center;
       height: 5vh;
     }
   }
   .resultado-busqueda {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    @include direction($direccion: row);
     a {
       text-decoration: none;
       .item-vista-general .conteiner-img {
@@ -32,9 +26,8 @@
       }
     }
     .paginas-busqueda {
-      display: flex;
+      @include direction($direccion: row);
       width: $total-vw;
-      justify-content: center;
     }
   }
 }
