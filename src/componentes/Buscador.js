@@ -20,6 +20,7 @@ const Buscador = () => {
   } = usePaginado();
   const [totalPaginas, setTotalPaginas] = useState(1);
   const [resultado, setResultado] = useState(true);
+  // no creo que tenga sentido tener un estado diferente para sin resultado; usaria !resultado para mostrar NoEncontrado
   const [sinResultado, setSinResultado] = useState(false);
   const [valorInput, setValorInput] = useState("");
   const [peliculas, setPeliculas] = useState([]);
@@ -52,6 +53,7 @@ const Buscador = () => {
     setSearchParams({
       query: valorInput,
     });
+    // el prevent default debe ser lo primero que hacemos dentro del submit
     e.preventDefault();
   };
 

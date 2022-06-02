@@ -9,6 +9,7 @@ import {
 import "../style/_paginado.scss";
 
 const Paginado = ({
+  // excelente este componente!!
   page,
   totalPaginas,
   handleClickPrimera,

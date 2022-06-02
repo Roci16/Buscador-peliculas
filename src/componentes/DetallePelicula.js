@@ -13,6 +13,7 @@ import Cargando from "./Cargando";
 
 const DetallePelicula = () => {
   const params = useParams();
+  // la pelicula es un objeto, no un array: deberia el estado iniciar como un objeto vacio
   const [pelicula, setPelicula] = useState([]);
   const [cargando, setCargando] = useState(false);
 
@@ -66,6 +67,7 @@ const DetallePelicula = () => {
                   ? "Sin resultados"
                   : pelicula.overview}
               </p>
+              {/* esto rompe, te dejo mas detalles en las observaciones */}
               <p>Géneros : {pelicula.genres && pelicula.genres[0].name}</p>
             </article>
           </article>
