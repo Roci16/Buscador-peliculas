@@ -4,6 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <ul>
+        {/* recordá agregarles aria label a tus links */}
         <a href="https://github.com/Roci16">
           <li>GitHub</li>
         </a>
